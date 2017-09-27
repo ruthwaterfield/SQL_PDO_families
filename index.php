@@ -8,7 +8,7 @@ INNER JOIN `colors` ON `children`.`f_color` = `colors`.`id`
 WHERE `colors`.`color` = 'red';");
 $query -> execute();
 
-$result = $query -> fetch();
+$result = $query -> fetchAll();
 
 echo 'task1: ';
 var_dump($result);
@@ -20,9 +20,9 @@ WHERE `adults`.`pet_name` = 'Syd'
 GROUP BY `children`.`id`;");
 $query -> execute();
 
-$result = $query -> fetch();
+$result = $query -> fetchAll();
 
-echo '<br> task2: ';
+echo '<br> <br> task2: ';
 var_dump($result);
 
 //task3
@@ -31,9 +31,9 @@ INNER JOIN `adults` ON `adults`.`child1` = `children`.`id`
 WHERE `adults`.`DOB` > '1985-01-01';");
 $query -> execute();
 
-$result = $query -> fetch();
+$result = $query -> fetchAll();
 
-echo '<br> task3: ';
+echo '<br> <br> task3: ';
 var_dump($result);
 
 
@@ -47,8 +47,8 @@ ORDER BY COUNT(`colors`.`id`) DESC
 LIMIT 1;");
 $query -> execute();
 
-$result = $query -> fetch();
+$result = $query -> fetchAll();
 
-echo '<br> task4: ';
+echo '<br> <br> task4: ';
 var_dump($result);
 ?>
